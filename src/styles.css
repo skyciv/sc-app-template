@@ -1,0 +1,23 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	height: 400px;
+	justify-content: space-around;
+	text-align: center;
+}
+
+.logo {
+	width: 100px;
+	height: 100px;
+}
+
+.heading {
+	color: #289dcc;
+	font-size: 24px;
+}
+
+.body {
+	color: #343434;
+	font-size: 24px;
+}

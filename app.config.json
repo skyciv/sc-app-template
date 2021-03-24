@@ -1,0 +1,11 @@
+{
+	"id": "skycivAppTemplate",
+	"name": "SkyCiv App Template",
+	"width": "600px",
+	"height": "600px",
+	"icon_img": "https://platform.skyciv.com/storage/images/logos/light/square-1.png",
+	"icon_img_square": "https://platform.skyciv.com/storage/images/logos/light/square-1.png",
+	"draggable": true,
+	"resizable": true,
+	"help_url": "https://skyciv.com/help"
+}
