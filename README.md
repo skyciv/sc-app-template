@@ -38,14 +38,19 @@ Example:
 
 app.js
 ```js
-export function onAppLaunch() {}
+export function onAppLaunch() {
+	console.log("App has been launched.")
+}
 ```
 
 Now we can import this function in another file and webpack will handle the rest with the `npm run build` command
 
 anotherFile.js
-```
+```js
 import {onAppLaunch} from './'
+
+// Invoke the function
+onAppLaunch();
 ```
 
 ----
@@ -65,33 +70,35 @@ The app will then be available in the drop down menu.
 
 ## Config Variables
 
-```json
-{
-	"id": "skycivAppTemplate", // string - File name of your model.
-	"name": "SkyCiv App Template", // string - Path in your cloud file storage.
-	"content": "<p>SkyCiv Apps</p>", // string - HTML string of what should be displayed in the app.
-	"width": "600px", // string - Optional width setting for app window.
-	"height": "600px", // string - Optional height setting for app window.
-	"icon_img": "https://platform.skyciv.com/storage/images/logos/light/square-1.png", // string - URL of image to be used.
-	"icon_img_square": "https://platform.skyciv.com/storage/images/logos/light/square-1.png", // string - URL of image to be used within the app header.
-	"draggable": true, // bool - Is the app window draggable. True by default.
-	"resizable": true, // bool - Can user resize window? Used alongside resizeableFunction to update.
-	"help_url": "https://skyciv.com/help" // string - URL of documentation or help page.
-}
-```
+The following definitions apply for `app.config.json`:
+
+| Key                  |    Type    | Description   |
+| :------------------- | :--------: | :------- |
+| `id`                 |  `string`  | File name of your model.                               |
+| `name`               |  `string`  | Path in your cloud file storage.                       |
+| `content`            |  `string`  | HTML string of what should be displayed in the app.    |
+| `width`              |  `string`  | Optional width setting for app window.                 |
+| `height`             |  `string`  | Optional height setting for app window.                |
+| `icon_img`           |  `string`  | URL of image to be used.                               |
+| `icon_img_square`    |  `string`  | URL of image to be used within the app header.         |
+| `draggable`          |   `bool`   | Is the app window draggable. True by default.          |
+| `resizable`          |   `bool`   | Can user resize window? Used alongside `resizeableFunction` to update. |
+| `help_url`           |  `string`  | URL of documentation or help page.                     |
+
 ----
 
 ## Config Events
 
-```json
-{
-	"onInit": "", // function - Function which runs when the page loads the app.
-	"resizeableFunction": "", // function - Function which runs when the app window is resized.
-	"onFirstOpen": "", // function - Runs when the app is open for the first time.
-	"onSoftwareUpdate": "", // function - Function to run after changes are made to your model in S3D. E.g. Bill of Materials App re-calculates cost when a member is added/deleted.
-	"beforeShow": "", // function - Before the app is shown, run this function.
-	"aferShow": "", // function - After the app is shown, run this function.
-	"beforeHide": "", // function - Before the app is hidden, run this function.
-	"aferHide": "" // function - After the app is hidden, run this function.
-}
-```
+The following definitions apply for `events.config.json`:
+
+| Key                  |    Type    | Description   |
+| :------------------- | :--------: | :------- |
+| `onInit`             | `function` | Function which runs when the page loads the app.       |
+| `resizeableFunction` | `function` | Function which runs when the app window is resized.    |
+| `onFirstOpen`        | `function` | Runs when the app is open for the first time.          |
+| `onSoftwareUpdate`   | `function` | Function to run after changes are made to your model in S3D. E.g. Bill of Materials App re-calculates cost when a member is added/deleted. |
+| `beforeShow`         | `function` | Before the app is shown, run this function.            |
+| `aferShow`           | `function` | After the app is shown, run this function.             |
+| `beforeHide`         | `function` | Before the app is hidden, run this function.           |
+| `aferHide`           | `function` | After the app is hidden, run this function.            |
+
